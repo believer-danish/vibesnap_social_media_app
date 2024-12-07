@@ -49,7 +49,7 @@ const Login = () => {
           </h2>
         </div>
 
-        <div className="flex gap-4 bg-[#292929] px-6 py-4 rounded-3xl">
+        <div className="flex gap-4 bg-[#292929] px-6 py-4 rounded-3xl cursor-pointer">
           <img src={google} alt="google logo" className="w-5 h-5" />
           <h1 className="text-white font-bold ">Continue with Google</h1>
         </div>
