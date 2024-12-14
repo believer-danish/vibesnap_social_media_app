@@ -5,7 +5,7 @@ import Testing from "./components/Testing";
 const appRoutes = createBrowserRouter([
   {
     path: "/",
-    element: <Testing />,
+    element: <Login />,
     errorElement: <h1>Erro</h1>,
   },
 ]);

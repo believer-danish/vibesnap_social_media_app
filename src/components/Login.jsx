@@ -14,9 +14,9 @@ import {
 
 const Login = () => {
   return (
-    <div className="h-[100svh] ">
+    <div className="h-[100svh] overflow-hidden  flex justify-center items-center   gap-4 ">
       {/* Photo gallery */}
-      <div className="grid  gap-4 grid-cols-3 w-full max-w-[600px] mx-auto">
+      <div className="grid  gap-4 grid-cols-3 w-full max-w-[600px] ">
         <div className="flex  flex-col gap-4">
           <img src={l1} alt="image" className="aspect-[1/1.8]" />
           <img src={l2} alt="image" className="aspect-[1/1.8]" />
@@ -36,10 +36,10 @@ const Login = () => {
 
       {/* Google sign in */}
       <div
-        className="bg-white  relative  z-10  -top-36  w-full max-w-xl
+        className="  relative  z-10  -top-36  w-full max-w-xl
        flex gap-8 p items-center justify-start flex-col rounded-[64px] p-9  "
       >
-        <div>
+        <div cla>
           <h1 className="flex gap-2 justify-center items-center">
             <img src={vibesnap} alt="logo" className="w-12 h-9" />
             <span className="text-3xl font-semibold">Vibesnap</span>
