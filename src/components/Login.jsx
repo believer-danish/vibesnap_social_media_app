@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import {
   l1,
   l2,
@@ -11,10 +12,25 @@ import {
   google,
   vibesnap,
 } from "../utils/data";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const Login = () => {
+  const handleAuthentication = () => {
+    const provider = new GoogleAuthProvider();
+
+    console.log(auth);
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("sign in successfull");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div className="h-[100svh] overflow-hidden  flex justify-center items-center   gap-4 ">
+    <div className="h-[100svh] overflow-hidden  flex flex-col lg:flex-row justify-center items-center   gap-4 ">
       {/* Photo gallery */}
       <div className="grid  gap-4 grid-cols-3 w-full max-w-[600px] ">
         <div className="flex  flex-col gap-4">
@@ -36,10 +52,10 @@ const Login = () => {
 
       {/* Google sign in */}
       <div
-        className="  relative  z-10  -top-36  w-full max-w-xl
+        className=" bg-white  lg:bg-slate-200 relative  z-10  max-lg:-top-36  w-full max-w-xl
        flex gap-8 p items-center justify-start flex-col rounded-[64px] p-9  "
       >
-        <div cla>
+        <div>
           <h1 className="flex gap-2 justify-center items-center">
             <img src={vibesnap} alt="logo" className="w-12 h-9" />
             <span className="text-3xl font-semibold">Vibesnap</span>
@@ -49,7 +65,10 @@ const Login = () => {
           </h2>
         </div>
 
-        <div className="flex gap-4 bg-[#292929] px-6 py-4 rounded-3xl cursor-pointer">
+        <div
+          onClick={handleAuthentication}
+          className="flex gap-4 bg-[#292929] px-6 py-4 rounded-3xl cursor-pointer"
+        >
           <img src={google} alt="google logo" className="w-5 h-5" />
           <h1 className="text-white font-bold ">Continue with Google</h1>
         </div>
